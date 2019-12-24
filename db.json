@@ -1,9 +1,236 @@
 {
-    "posts": [
-      {"title": "json-server", "body": "typicode","userId":"2" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "posts": [
+    {
+      "title": "00pp12",
+      "body": "k",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "o",
+      "body": "0",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "giorgi bakhbaia",
+      "body": "0giorgi",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "title": "lm123435",
+      "body": "99100222",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "title": "pokjkk",
+      "body": "o",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "title": "u",
+      "body": "9",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "title": "k",
+      "body": "0",
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "title": "455",
+      "body": "hh",
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "title": "8",
+      "body": "p",
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "title": "9",
+      "body": "0",
+      "userId": 1,
+      "id": 13
+    },
+    {
+      "title": "h",
+      "body": "j",
+      "userId": 1,
+      "id": 14
+    },
+    {
+      "title": "u",
+      "body": "i",
+      "userId": 1,
+      "id": 15
+    },
+    {
+      "title": "9",
+      "body": "-",
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "title": "8",
+      "body": "8",
+      "userId": 1,
+      "id": 17
+    },
+    {
+      "title": "8",
+      "body": "-",
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "title": "h",
+      "body": "9",
+      "userId": 1,
+      "id": 19
+    },
+    {
+      "title": "9",
+      "body": "y",
+      "userId": 1,
+      "id": 20
+    },
+    {
+      "title": "0",
+      "body": "k",
+      "userId": 1,
+      "id": 21
+    },
+    {
+      "title": "u",
+      "body": "9",
+      "userId": 1,
+      "id": 22
+    },
+    {
+      "title": "p",
+      "body": "0",
+      "userId": 1,
+      "id": 23
+    },
+    {
+      "title": "u",
+      "body": "9",
+      "userId": 1,
+      "id": 24
+    },
+    {
+      "title": "i",
+      "body": "9",
+      "userId": 1,
+      "id": 25
+    },
+    {
+      "title": "o",
+      "body": "-",
+      "userId": 1,
+      "id": 26
+    },
+    {
+      "title": "o",
+      "body": "-",
+      "userId": 1,
+      "id": 27
+    },
+    {
+      "title": ".",
+      "body": "=",
+      "userId": 1,
+      "id": 28
+    },
+    {
+      "title": "u",
+      "body": "9",
+      "userId": 1,
+      "id": 29
+    },
+    {
+      "title": "u",
+      "body": "9",
+      "userId": 1,
+      "id": 30
+    },
+    {
+      "title": "o",
+      "body": "0",
+      "userId": 1,
+      "id": 31
+    },
+    {
+      "title": "o",
+      "body": "-",
+      "userId": 1,
+      "id": 32
+    },
+    {
+      "title": "-",
+      "body": "p",
+      "userId": 1,
+      "id": 33
+    },
+    {
+      "title": "o",
+      "body": "0",
+      "userId": 1,
+      "id": 34
+    },
+    {
+      "title": "l",
+      "body": "-",
+      "userId": 1,
+      "id": 35
+    },
+    {
+      "title": "0",
+      "body": "9",
+      "userId": 1,
+      "id": 36
+    },
+    {
+      "title": "i",
+      "body": "0",
+      "userId": 1,
+      "id": 37
+    },
+    {
+      "title": "fff",
+      "body": "7770",
+      "userId": 1,
+      "id": 38
+    },
+    {
+      "title": "123",
+      "body": "321",
+      "userId": 1,
+      "id": 39
+    },
+    {
+      "title": "i",
+      "body": "p",
+      "userId": 1,
+      "id": 40
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}
