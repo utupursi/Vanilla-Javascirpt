@@ -2,9 +2,10 @@ export default class Library {
 
   constructor() {
     this.tr = document.querySelector('#t');
-    this.posts = [];
-    this.input = document.querySelector('#input1');
-    this.input2 = document.querySelector('#input2');
+    this.users = [];
+    this.input = document.querySelector('#input0');
+    this.input2 = document.querySelector('#input1');
+    this.input3 = document.querySelector('#input2');
     //   this.authors = [];
     //   this.books = [];
     //   this.id=0;
@@ -14,23 +15,22 @@ export default class Library {
   }
 
   async getApi() {
-    this.tr.innerHTML += 'Loading...'
-    let response = await fetch('http://localhost:3000/posts');
+    this.tr.innerHTML += 'Loading...';
+    let response = await fetch('http://localhost:3000/users');
     let data = await response.json();
-    this.posts = [...data];
-    console.log(this.posts);
+    this.users = [...data];
     this.outputData();
 
   }
 
   async saveData() {
-    let id = this.posts[this.posts.length - 1].id + 1;
-    let save = await fetch('http://localhost:3000/posts', {
+    let id = this.users[this.users.length - 1].id + 1;
+    let save = await fetch('http://localhost:3000/users', {
       method: 'POST',
       body: JSON.stringify({
-        title: this.input.value,
-        body: this.input2.value,
-        userId: 1,
+        name: this.input.value,
+        username: this.input2.value,
+        email: this.input3.value,
         id: id
       }),
       headers: {
@@ -38,64 +38,84 @@ export default class Library {
       }
     })
     let result = await save.json();
-    await this.posts.push({title: this.input.value, body: this.input2.value, userId: 1, id: id})
+    await this.users.push({name: this.input.value, username: this.input2.value, email: 1, id: id})
     this.outputData(result);
   }
 
   async updateData(id, value) {
-    let update = await fetch(`http://localhost:3000/posts/${id}`, {
+    let update = await fetch(`http://localhost:3000/users/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
-        title: inputOfUpdate.value,
-        body: input1OfUpdate.value,
-        userId: 1
+        name: inputOfName.value,
+        username: inputOfUsername.value,
+        email: inputOfEmail.value,
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8"
       }
     })
     let result = await update.json();
-    this.posts[value].title = inputOfUpdate.value;
-    this.posts[value].body = input1OfUpdate.value;
+    this.users[value].name = inputOfName.value;
+    this.users[value].username = inputOfUsername.value;
+    this.users[value].email = inputOfEmail.value;
     this.outputData();
-
   }
 
   outputData() {
     this.tr.innerHTML = '';
-    this.posts.forEach(element => {
+    this.users.forEach(element => {
       this.tr.innerHTML += `
       <tr>
         <td>${element.id}</td>
-        <td>${element.userId}</td>
-        <td>${element.title}</td>
-        <td>${element.body}</td>
+        <td>${element.name}</td>
+        <td>${element.username}</td>
+        <td>${element.email}</td>
         <td><button class="btn btn-primary" id="btn-update" value="${element.id}">Update</button></td>
+        <td><button class="btn btn-danger" id="btn-delete" value="${element.id}">Delete</button></td>
       </tr>`;
     });
 
     let btnUpdate = document.querySelectorAll('#btn-update');
-    let posts = this.posts;
+    let btnDelete = document.querySelectorAll('#btn-delete');
+    let users = this.users;
     for (let i = 0; i < btnUpdate.length; i++) {
       btnUpdate[i].addEventListener('click', function () {
-        m(posts);
+        m(users);
       });
+      btnDelete[i].addEventListener('click', function () {
+        deleteUser(users);
+      })
 
-      function m(posts) {
-        console.log(modal);
+      function m(users) {
         modal.style.display = 'block';
         button.id = btnUpdate[i].value;
         button.value = i;
-        inputOfUpdate.value = posts[i].title;
-        input1OfUpdate.value = posts[i].body;
+        inputOfName.value = users[i].name;
+        inputOfUsername.value = users[i].username;
+        inputOfEmail.value = users[i].email;
+      }
+
+      async function deleteUser(users) {
+        if (confirm('Are you sure you want to delete this user?')) {
+          let deleteUser = await fetch(`http://localhost:3000/users/${users[i].id}`, {
+            method: 'DELETE',
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          });
+          let deleteData = await deleteUser.json();
+          users.splice(i, 1);
+          let parent = btnUpdate[i].parentElement.parentElement.remove();
+        }
       }
     }
 
   }
 }
 let button = document.getElementById('btn-update1');
-let inputOfUpdate = document.querySelector('#input3');
-let input1OfUpdate = document.querySelector('#input4');
+let inputOfName = document.querySelector('#input3');
+let inputOfUsername = document.querySelector('#input4');
+let inputOfEmail = document.querySelector('#input5');
 let modalContent = document.querySelector('#modal-content1');
 let modal = document.querySelector("#myModal1");
 

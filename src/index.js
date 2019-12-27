@@ -13,9 +13,16 @@ let span1 = document.getElementsByClassName("close1")[0];
 let btnSave = document.querySelector('#btn-save');
 let btnUpdate = document.querySelector('#btn-update1');
 
+let input = document.querySelector('#input0');
+let input2 = document.querySelector('#input1');
+let input3 = document.querySelector('#input2');
+
 console.log(btn);
 console.log(modalOfCreate);
 btn.onclick = function () {
+  input.value = '';
+  input2.value = '';
+  input3.value = '';
   modalOfCreate.style.display = 'block';
 };
 span.onclick = function () {
